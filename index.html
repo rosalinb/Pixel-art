@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel-art</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <h1>Pixel Art Mini Project</h1>
+    <h4>Pick a color and hover around the boxes to see the magic</h4>
+    <section class="selector-container">
+      <div class="color-brush-container">
+        <h3>Pick a color</h3>
+        <form class="form" action="">
+          <label for="color-picker">Pick a color:</label>
+          <input type="color" id="color-picker" />
+          <button id="color-button">Set Color</button>
+        </form>
+      </div>
+      <button id="reset-button">Reset</button>
+
+      <div class="movie-box">
+        <h3>Pick a movie name and hit enter</h3>
+        <form action="">
+          <input type="text" id="movie-input" />
+          <button id="poster-button">Set movie poster</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="pixel-container"></div>
+  </body>
+</html>
