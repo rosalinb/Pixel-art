@@ -14,6 +14,9 @@ const gameSound = new Audio(
 );
 const gameOver = new Audio("./sounds/gameover.mp3");
 
+// Define an array to store timer IDs
+const timerIds = [];
+
 // Function to create pixel grid and handle interactions
 for (var i = 1000; i > 0; i--) {
   const div = document.createElement("div");
@@ -29,18 +32,29 @@ function handlePixelMouseOver(event) {
   pixel.style.background = document.querySelector("input").value;
 
   // Timers to change pixel color
-  setTimeout(() => {
-    pixel.style.backgroundColor = "red";
-  }, 2000);
-  setTimeout(() => {
-    pixel.style.backgroundColor = "blue";
-  }, 3000);
-  setTimeout(() => {
-    pixel.style.backgroundColor = "green";
-  }, 5000);
-  setTimeout(() => {
-    pixel.style.backgroundColor = "#ff9a8b";
-  }, 7000);
+  timerIds.push(
+    setTimeout(() => {
+      pixel.style.backgroundColor = "red";
+    }, 2000)
+  );
+
+  timerIds.push(
+    setTimeout(() => {
+      pixel.style.backgroundColor = "blue";
+    }, 3000)
+  );
+
+  timerIds.push(
+    setTimeout(() => {
+      pixel.style.backgroundColor = "green";
+    }, 5000)
+  );
+
+  timerIds.push(
+    setTimeout(() => {
+      pixel.style.backgroundColor = "#ff9a8b";
+    }, 7000)
+  );
 }
 
 //Event to fetch the movie poster
@@ -57,6 +71,11 @@ resetButton.addEventListener("click", () => {
   // Iterate through each pixel and remove the background color
   pixels.forEach((pixel) => {
     pixel.style.background = "none";
+  });
+
+  // Clear all timers
+  timerIds.forEach((timerId) => {
+    clearTimeout(timerId);
   });
   gameOver.play();
 });

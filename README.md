@@ -4,7 +4,7 @@ This is a mini project that creates a pixel grid where each pixel changes color 
 
 ## Play Online
 
-You can play the game online [here](https://your-game-url.com).
+You can play the game online [here](https://rosalinb.github.io/Pixel-art/).
 
 ## Features
 
